@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three Progress Circles</title>
+<style>
+    body{
+        background-color: steelblue;
+    }
+    header{
+        background-color: whitesmoke;
+        padding: 10px;
+        text-align: center;
+    }
+    .container{
+        background-color: white;
+        width: 500px;
+        height: 500px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 0 auto; /* Center align horizontally */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 180px;
+    }
+
+    .brand-input {
+        text-align: left;
+        padding: 10px;
+        font-size: large;
+    }
+
+    input[type="text"] {
+        width: 200px;
+        height: 30px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    input[type="submit"] {
+        width: auto;
+        height: 36px;
+        padding: 0 20px;
+        background-color: steelblue;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .review-section {
+        margin-top: 20px;
+    }
+
+    .review-section h2 {
+        font-size: 20px;
+        color: steelblue;
+        margin-bottom: 10px;
+    }
+
+    .skills-container {
+        display: flex;
+        justify-content: space-around; /* Adjust spacing between circles */
+        max-width: 1000px; /* Adjust max width as needed */
+        margin: 0 auto; /* Center align horizontally */
+        margin-top: 30px;
+    }
+
+    .skill {
+        width: 160px;
+        height: 160px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    .outer2 {
+        position: absolute;
+        height: 160px;
+        width: 160px;
+        border-radius: 50%;
+        padding: 1px;
+        box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+                    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+    }
+
+    .inner2 {
+        position: absolute;
+        margin-top: 80px;
+        margin-left: 125px;
+        transform: translate(-50%, -50%);
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: inset 4px 4px 6px 1px rgba(0, 0, 0, 0.2),
+                    inset -4px -4px 6px 1px rgba(255, 255, 255, 0.7),
+                    -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+                    0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+                    0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+    }
+
+    #number2 {
+        font-weight: 600;
+        color: #555;
+    }
+
+    .POS
+    {
+        position: absolute;
+        margin-top: 170px;
+        margin-left: 20px;
+    }
+    /* Animation for circles */
+    circle {
+        animation: progress-65 2s ease-in-out forwards;
+    }
+
+    @keyframes progress-65 {
+        0% {
+            stroke-dashoffset: 440; /* Starting point, full circle */
+        }
+        100% {
+            stroke-dashoffset: calc(440 - (440 * 70 / 100)); /* 65% progress */
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>RepuSaint</h1>
+    </header>
+
+    <form class="brand-input" action="#" method="post">
+        <label for="brandName">Brand Name:</label>
+        <input type="text" id="brandName" name="brandName" placeholder="Enter brand name...">
+        <input type="submit" value="Submit">
+    </form>
+
+    <div class="review-section">
+        <h2>Review and Comments</h2>
+        <!-- Placeholder for review and comments section -->
+    </div>
+
+    <div class="skills-container">
+        <div class="skill">
+            <svg class="outer2" viewBox="0 0 160 160">
+                <defs>
+                    <linearGradient id="GradientColor1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4F52FF;" />
+                        <stop offset="100%" style="stop-color:#00EAFF;" />
+                    </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" stroke="url(#GradientColor1)" stroke-width="20" fill="none"
+                        stroke-dasharray="440" stroke-dashoffset="0" />
+            </svg>
+            <div class="inner2">
+                <h2 id="number2">70%</h2>
+            </div>
+            <div class="POS">
+                POSITIVE
+            </div>
+        </div>
+
+        <div class="skill">
+            <svg class="outer2" viewBox="0 0 160 160">
+                <defs>
+                    <linearGradient id="GradientColor2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#FF6B6B;" />
+                        <stop offset="100%" style="stop-color:#FFD166;" />
+                    </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" stroke="url(#GradientColor2)" stroke-width="20" fill="none"
+                        stroke-dasharray="440" stroke-dashoffset="0" />
+            </svg>
+            <div class="inner2">
+                <h2 id="number2">45%</h2>
+            </div>
+            <div class="POS">
+                NEUTRAL
+            </div>
+        </div>
+
+        <div class="skill">
+            <svg class="outer2" viewBox="0 0 160 160">
+                <defs>
+                    <linearGradient id="GradientColor3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#FFD700;" />
+                        <stop offset="100%" style="stop-color:#FF6347;" />
+                    </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" stroke="url(#GradientColor3)" stroke-width="20" fill="none"
+                        stroke-dasharray="440" stroke-dashoffset="0" />
+            </svg>
+            <div class="inner2">
+                <h2 id="number2">85%</h2>
+            </div>
+            <div class="POS">
+                NEGATIVE
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
